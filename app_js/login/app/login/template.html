@@ -1,0 +1,14 @@
+<h1>Hello</h1>
+<form ng-submit="ctl.login(form, loginForm.$valid)"
+  name="loginForm">
+
+  <label for="username">Username</label>
+  <input type="text" ng-model="form.username" name="username"></input>
+
+  <label for="password">Password</label>
+  <input type="password" ng-model="form.password" name="password"></input>
+
+  <button>Login</button>
+</form>
+
+<div> {{ctl.auth_token}} </div>
