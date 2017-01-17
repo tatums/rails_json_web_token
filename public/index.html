@@ -2,19 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>Scholastica</title>
+    <script type="text/javascript" src="scripts.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
   </head>
-
-  <body>
-
-    <div>
-      <div>
-        <a href="login/">Login</a>
-      </div>
-    </div>
-
-    <h1>Hello World</h1>
-
+  <body ng-app="app">
+    <main class="container">
+      <div ui-view />
+    </main>
   </body>
-
 </html>

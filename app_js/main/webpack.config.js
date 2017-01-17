@@ -4,7 +4,7 @@ module.exports = {
   entry: "./app/index.js",
   output: {
     path: path.join(__dirname),
-    filename: "../../public/login/scripts.js"
+    filename: "../../public/scripts.js"
   },
   module: {
     preLoaders: [
