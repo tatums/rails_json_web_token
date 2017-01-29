@@ -6,28 +6,20 @@
 //  e: 'AQAB'
 //}
 
+    //let cert = fs.readFileSync('../../public_key.pem');
+    //jwt.verify(token, cert, function(err, decoded) {
+    //  console.log(decoded)
+    //});
+
 export default function run($rootScope, $state, $cookies) {
-
-
   $rootScope.$on("$stateChangeStart", (event, toState, toParams, fromState, fromParams) => {
-
-
-    let cert = fs.readFileSync('../../public_key.pem');
     let token = $cookies.get('auth_token')
-
-    jwt.verify(token, cert, function(err, decoded) {
-      console.log(decoded)
-    });
-
-
-
-    if (token == undefined && toState.name != "main.login") {
-      console.log('301 REDIRECT');
+    if (token == undefined && toState.loginRequired && toState.name != "main.login") {
+      console.log('NOT AUTH TOKEN => REDIRECT to LOGIN');
       $state.transitionTo('main.login')
       event.preventDefault()
     }
   });
-
 }
 
 run.$inject = ['$rootScope', '$state', '$cookies'];

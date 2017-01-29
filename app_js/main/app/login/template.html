@@ -1,5 +1,4 @@
-<form ng-submit="ctl.login(form, loginForm.$valid)"
-  name="loginForm">
+<form ng-submit="ctl.login(form, loginForm.$valid)" name="loginForm">
 
   <label for="username">Username</label>
   <input type="text" ng-model="form.username" name="username"></input>
@@ -10,4 +9,11 @@
   <button>Login</button>
 </form>
 
+<h3>Reset Password</h3>
+<p>Have you forgotten your password?</p>
+<form ng-submit="ctl.passwordReset(reset, resetForm.$valid)" name="resetForm" novalidate>
+  <label for="email">Email</label>
+  <input type="text" ng-model="reset.email" name="email" required></input>
+  <button>Reset Passowrd</button>
+</form>
 <div> {{ctl.auth_token}} </div>

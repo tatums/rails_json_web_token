@@ -1,0 +1,25 @@
+<form ng-submit="ctl.signup(form, signupForm)" name="signupForm" novalidate>
+
+  <label for="email">Email</label>
+  <input type="text" ng-model="form.email" name="email" required></input>
+
+  <p ng-if="signupForm.email.$error.required && signupForm.email.$touched" class="help-block">
+    email is required
+  </p>
+
+  <label for="password">Password</label>
+  <input type="password" ng-model="form.password" name="password" required></input>
+  <p ng-if="signupForm.password.$error.required && signupForm.password.$touched" class="help-block">
+    password is required
+  </p>
+
+  <label for="password_confirmation">Password Confirmation</label>
+  <input type="password" ng-model="form.password_confirmation" name="password_confirmation" required></input>
+
+  <p ng-if="signupForm.password_confirmation.$error.required && signupForm.password_confirmation.$touched" class="help-block">
+    password confirmation is required
+  </p>
+
+  <button>Signup</button>
+</form>
+

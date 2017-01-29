@@ -9,7 +9,6 @@ export default class controller {
   }
 
   login(form, validity) {
-
     this.AuthService.login(form.username, form.password)
     .then(resp => {
       this._cookies.put('auth_token', resp.data.auth_token)
@@ -19,6 +18,16 @@ export default class controller {
       console.log(err)
     })
 
+  }
+
+  passwordReset(form, validity) {
+    this.AuthService.passwordReset(form.email)
+    .then(resp => {
+      console.log(resp);
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 }
 controller.$inject = ['$http', '$cookies', '$state', 'AuthService']

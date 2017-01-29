@@ -1,0 +1,12 @@
+<h1>Update Password</h1>
+
+<form ng-submit="ctl.updatePassword(form, passwordForm.$valid)" name="passwordForm" novalidate>
+
+  <label for="password">Password</label>
+  <input type="password" ng-model="form.password" name="password"></input>
+
+  <label for="password_confirmation">Password Confirmation</label>
+  <input type="password" ng-model="form.password_confirmation" name="password_confirmation"></input>
+
+  <button>Update Password</button>
+</form>

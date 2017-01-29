@@ -1,15 +1,20 @@
 export default class controller {
 
-  constructor(articles, $cookies, $state) {
+  constructor(AuthService, articles, $state) {
+    this._AuthService = AuthService
     this.articles = articles
-    this._cookies = $cookies
     this._state = $state
   }
 
   logout() {
-    this._cookies.remove('auth_token')
-    this._state.go('main.login')
+    this._AuthService.logout()
+    .then(resp => {
+      this._state.go('main.login')
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
 }
-controller.$inject = ['articles', '$cookies', '$state']
+controller.$inject = ['AuthService', 'articles', '$state']
