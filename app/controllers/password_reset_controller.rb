@@ -7,7 +7,6 @@ class PasswordResetController < ApplicationController
   end
 
   def update
-    binding.pry
     @user = User.reset_password_by_token(user_params)
     if @user.valid?
       render json: @user

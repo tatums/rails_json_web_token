@@ -1,19 +1,18 @@
 # Rails and JWT
-
 This is a Proof of concept which uses Rails as a backend and returns JWT for
 Auth. Client side apps can verify the token using the public RSA key.
 The token is held by the client app and will need to pass the token back up to
-the server on subsequet requests for resources.
+the server on subsequet requests (as a header) for resources.
 
 * Rails API
-* Devise for user auth
+* Devise to handle auth logic (from API to the DataStore level)
 * JWT (JSON Web Tokens)
-* SPA's (Single Page Apps) are served from `public` directory but this could
-  even be an S3 bucket under the same domain
+* SPA's (Single Page Apps) are served from `public` directory but this could any
+  HTTP Server including an S3 bucket
 
 ## Development
 
-#### Server
+#### Api Server
 
 Start rails
 
@@ -22,15 +21,15 @@ $ rails db:setup
 $ rails server
 ```
 
-#### Cient Side App
+#### Cient Side Apps
+The SPA's soruce code lives in `app_js`
 
 ```bash
-$ cd app_js
+$ cd app_js/main
 $ npm install
 $ npm run webpack -- --watch
 ```
 
-* SPA's soruce lives in `app_js`
 
 ## TODO
 
