@@ -30,18 +30,17 @@ $ npm install
 $ npm run webpack -- --watch
 ```
 
-
 ## TODO
 
 - [ ] check token for expiration
   - [] client side (JS)
   - [] Server side (ruby)
-- [ ] my account page
-- [ ] change password
-- [ ] password reset
+- [x] my account page
+- [x] change password
+- [x] password reset
 - [ ] push logic into warden - maybe?  https://medium.com/@goncalvesjoao/rails-devise-jwt-and-the-forgotten-warden-67cfcf8a0b73#.frv45o2rl
 
-## Notes
+#### Notes
 
 https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
 
