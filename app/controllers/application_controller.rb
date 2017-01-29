@@ -8,12 +8,11 @@ class ApplicationController < ActionController::API
     unless current_user
       render json: { errors: ['Not Authenticated'] }, status: :unauthorized
     end
-  rescue JWT::VerificationError, JWT::DecodeError
+  rescue ActiveRecord::RecordNotFound, JWT::VerificationError, JWT::DecodeError
     render json: { errors: ['Not Authenticated'] }, status: :unauthorized
   end
 
   private
-
 
   def current_user
     @current_user ||= User.find(auth_token[:user_id])
@@ -26,7 +25,4 @@ class ApplicationController < ActionController::API
                     end
   end
 
-  def user_id_in_token?
-    auth_token && auth_token[:user_id].present?
-  end
 end

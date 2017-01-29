@@ -12,8 +12,7 @@ class AuthenticationController < ApplicationController
   private
 
     def auth_token
-      expiration = Time.current + 2.days
-      JsonWebToken.encode({ user_id: @user.id, expiration: expiration })
+      JsonWebToken.encode({ user_id: @user.id })
     end
 
 end
